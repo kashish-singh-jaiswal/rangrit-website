@@ -1,0 +1,23 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: white;
+}
+
+.navbar-brand {
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  margin: 0 8px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ffc107 !important;
+}
+
+.nav-link.active {
+  color: #ffc107 !important;
+  font-weight: 600;
+}
