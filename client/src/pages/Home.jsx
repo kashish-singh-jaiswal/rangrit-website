@@ -1,5 +1,13 @@
+import Hero from "../components/home/Hero";
+import FeaturedGallery from "../components/home/FeaturedGallery";
+
 function Home() {
-  return <h1>Home Page</h1>;
+  return (
+    <>
+      <Hero />
+      <FeaturedGallery />
+    </>
+  );
 }
 
 export default Home;

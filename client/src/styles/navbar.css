@@ -1,0 +1,57 @@
+.navbar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: transparent;
+  transition: all 0.4s ease;
+}
+
+.navbar-wrapper.scrolled {
+  background: rgba(10, 10, 10, 0.9);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+}
+
+.logo a {
+  color: white;
+  font-family: var(--heading-font);
+  font-size: 2rem;
+  letter-spacing: 3px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 35px;
+}
+
+.nav-links a {
+  color: white;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--gold);
+}
+
+.book-btn {
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 12px 28px;
+  transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+  background: var(--gold);
+  color: black;
+}
