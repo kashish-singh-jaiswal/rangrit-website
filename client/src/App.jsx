@@ -11,6 +11,7 @@ import Booking from "./pages/Booking";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
+import StoryDetails from "./pages/StoryDetails";
 import NotFound from "./pages/NotFound";
 
 function App() {
@@ -35,16 +36,17 @@ function App() {
 
           <Route path="/contact" element={<Contact />} />
 
+          {/* Story Details */}
+          <Route path="/story/:slug" element={<StoryDetails />} />
+
         </Route>
 
         {/* Standalone Pages */}
-
         <Route path="/login" element={<Login />} />
 
         <Route path="/dashboard" element={<Dashboard />} />
 
         {/* 404 */}
-
         <Route path="*" element={<NotFound />} />
 
       </Routes>
