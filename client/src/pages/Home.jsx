@@ -1,13 +1,9 @@
-import Hero from "../components/home/Hero";
-import FeaturedGallery from "../components/home/FeaturedGallery";
-import HomeSlider from "../components/home/HeroSlider";
+import HeroGallery from "../components/home/HeroGallery";
 
 function Home() {
   return (
     <>
-      <Hero />
-      <HomeSlider />
-      <FeaturedGallery />
+      <HeroGallery />
     </>
   );
 }
