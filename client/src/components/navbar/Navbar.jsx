@@ -15,14 +15,11 @@ function Navbar() {
 
         <nav className="nav-menu">
           <Link to="/">Home</Link>
-          <Link to="/stories">Stories</Link>
+          <Link to="/gallery">Gallery</Link>
           <Link to="/films">Films</Link>
-          <Link to="/about">About</Link>
-          <Link to="/services">Services</Link>
-          <Link to="/contact">Contact</Link>
-
+          <Link to="/about">About Us</Link>
           <Link className="book-btn" to="/booking">
-            Book Session
+            Book Now
           </Link>
         </nav>
 
