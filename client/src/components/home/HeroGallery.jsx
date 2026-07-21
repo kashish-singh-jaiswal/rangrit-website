@@ -62,8 +62,8 @@ function HeroGallery() {
           </p>
 
           <div className="hero-gallery__actions">
-            <Link to="/portfolio" className="hero-btn hero-btn--primary">
-              View Portfolio
+            <Link to="/gallery" className="hero-btn hero-btn--primary">
+              View Gallery
             </Link>
             <Link to="/booking" className="hero-btn hero-btn--ghost">
               Book a Shoot
