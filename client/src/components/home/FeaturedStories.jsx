@@ -1,23 +1,58 @@
-import story1 from "../../assets/images/stories/story1.jpg";
-import story2 from "../../assets/images/stories/story2.jpg";
+import { Link } from "react-router-dom";
+import gallery from "../../data/galleryData";
+import "../../styles/featuredStories.css";
 
-const stories = [
-  {
-    id: 1,
-    slug: "ridhima-ashwin",
-    title: "Eight Years, Four Proposals & One Red Lehenga",
-    couple: "Ridhima & Ashwin",
-    location: "Taj Lakefront, Bhopal",
-    image: story1,
-  },
-  {
-    id: 2,
-    slug: "priya-rohan",
-    title: "A Love Story In The Mountains",
-    couple: "Priya & Rohan",
-    location: "Shimla",
-    image: story2,
-  },
-];
+function FeaturedStories() {
+  return (
+    <section className="featured-stories">
 
-export default stories;
+      <div className="section-title">
+
+        <span>OUR STORIES</span>
+
+        <h2>Featured Wedding Stories</h2>
+
+        <p>
+          Every wedding is unique. Explore some of our favourite love stories
+          captured through timeless photography.
+        </p>
+
+      </div>
+
+      <div className="stories-grid">
+
+        {gallery.map((story) => (
+
+          <Link
+            to={`/gallery/${story.slug}`}
+            className="story-card"
+            key={story.id}
+          >
+
+            <img src={story.image} alt={story.couple} />
+
+            <div className="story-overlay">
+
+              <span>{story.location}</span>
+
+              <h3>{story.couple}</h3>
+
+            </div>
+
+          </Link>
+
+        ))}
+
+        </div>
+        <div className="featured-gallery__actions">
+          <Link to="/gallery" className="browse-btn">
+            Browse our work
+            <span>→</span>
+          </Link>
+        </div>
+
+    </section>
+  );
+}
+
+export default FeaturedStories;

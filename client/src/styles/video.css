@@ -1,34 +1,82 @@
 .featured-video{
-    padding:100px 0;
-    background:#0f0f0f;
+    padding:120px 0;
+    background:#faf7f2;
 }
 
 .video-header{
+    max-width:750px;
+    margin:0 auto 70px;
     text-align:center;
-    margin-bottom:60px;
+}
+
+.section-subtitle{
+    color:#b88b4a;
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:14px;
+    margin-bottom:15px;
 }
 
 .video-header h2{
-    color:white;
-    font-size:46px;
-    margin-top:15px;
+    font-family:"Playfair Display",serif;
+    font-size:54px;
+    color:#222;
+    margin-bottom:25px;
+    line-height:1.2;
 }
 
-.video-wrapper{
+.video-text{
+    color:#666;
+    font-size:17px;
+    line-height:1.9;
+}
 
-    max-width:1000px;
-    margin:auto;
+.featured-video-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:35px;
+}
 
-    border-radius:20px;
+.featured-film-card{
+    background:#fff;
+    border-radius:22px;
     overflow:hidden;
-
-    box-shadow:0 20px 60px rgba(0,0,0,.45);
-
+    box-shadow:0 18px 45px rgba(0,0,0,.08);
+    transition:.4s;
 }
 
-.video-wrapper video{
+.featured-film-card:hover{
+    transform:translateY(-10px);
+}
 
+.featured-film-card video{
     width:100%;
-    display:block;
+    aspect-ratio:16/9;
+    object-fit:cover;
+}
+
+.featured-film-card h3{
+    padding:22px;
+    text-align:center;
+    font-family:"Playfair Display",serif;
+    font-size:24px;
+    color:#222;
+}
+
+.video-btn{
+    display:flex;
+    justify-content:center;
+    margin-top:60px;
+}
+
+@media(max-width:992px){
+
+.featured-video-grid{
+grid-template-columns:1fr;
+}
+
+.video-header h2{
+font-size:40px;
+}
 
 }

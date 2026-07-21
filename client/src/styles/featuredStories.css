@@ -1,0 +1,156 @@
+.featured-stories{
+    width:92%;
+    margin:100px auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title span{
+    color:#c8a46b;
+    letter-spacing:4px;
+    font-size:14px;
+    font-weight:600;
+}
+
+.section-title h2{
+    font-family:"Playfair Display",serif;
+    font-size:52px;
+    margin:15px 0;
+    color:#222;
+}
+
+.section-title p{
+    width:700px;
+    max-width:95%;
+    margin:auto;
+    color:#666;
+    line-height:1.8;
+}
+
+.stories-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.story-card{
+    position:relative;
+    overflow:hidden;
+    border-radius:18px;
+    display:block;
+    height:420px;
+    box-shadow:0 20px 45px rgba(0,0,0,.12);
+    transition:.4s;
+}
+
+.story-card:hover{
+    transform:translateY(-10px);
+}
+
+.story-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.7s;
+}
+
+.story-card:hover img{
+    transform:scale(1.1);
+}
+
+.story-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top,
+    rgba(0,0,0,.8),
+    rgba(0,0,0,.1));
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    padding:30px;
+}
+
+.story-overlay span{
+    color:#d8b36a;
+    font-size:14px;
+    letter-spacing:2px;
+    margin-bottom:10px;
+}
+
+.story-overlay h3{
+    color:#fff;
+    font-size:30px;
+    font-family:"Playfair Display",serif;
+}
+.featured-gallery__actions{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:70px 0;
+}
+
+.browse-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:14px;
+    padding:18px 42px;
+    background:#111111;
+    color:#ffffff;
+    text-decoration:none;
+    font-size:17px;
+    font-weight:500;
+    letter-spacing:1px;
+    border-radius:60px;
+    border:1px solid transparent;
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+    transition:all .35s ease;
+}
+
+.browse-btn span{
+    font-size:22px;
+    transition:transform .35s ease;
+}
+
+.browse-btn:hover{
+    background:#c8a46b;
+    color:#fff;
+    transform:translateY(-4px);
+    box-shadow:0 20px 40px rgba(200,164,107,.35);
+}
+
+.browse-btn:hover span{
+    transform:translateX(6px);
+}
+
+.browse-btn:active{
+    transform:translateY(-1px);
+}
+
+
+@media(max-width:992px){
+
+.stories-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:768px){
+
+.stories-grid{
+grid-template-columns:1fr;
+}
+
+.story-card{
+height:360px;
+}
+
+.section-title h2{
+font-size:36px;
+}
+
+}
+
