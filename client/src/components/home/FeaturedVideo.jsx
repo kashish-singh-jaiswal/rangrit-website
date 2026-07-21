@@ -83,9 +83,8 @@ function FeaturedVideo() {
         </div>
 
       </div>
-      <section className="instagram-section">
-
-      <div className="container">
+      
+      <div className="instagram-section container">
 
         <h2>Follow us on Instagram</h2>
 
@@ -107,10 +106,8 @@ function FeaturedVideo() {
         </a>
 
       </div>
-
+      
     </section>
-    </section>
-
     
   );
 }
