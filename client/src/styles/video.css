@@ -80,3 +80,78 @@ font-size:40px;
 }
 
 }
+
+.instagram-section{
+    padding:120px 20px;
+    background:#faf8f4;
+    text-align:center;
+}
+
+.instagram-section h2{
+    font-family:"Playfair Display",serif;
+    font-size:54px;
+    color:#b88b4a;
+    margin-bottom:45px;
+}
+
+.instagram-link{
+    display:inline-flex;
+    align-items:center;
+    gap:14px;
+    color:#090101;
+    text-decoration:none;
+    font-size:24px;
+    font-weight:500;
+    transition:.35s;
+}
+
+.instagram-link span{
+    position:relative;
+}
+
+.instagram-link span::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:0;
+    height:2px;
+    background:#b88b4a;
+    transition:.35s;
+}
+
+.instagram-link:hover span::after{
+    width:100%;
+}
+
+.instagram-link svg{
+    width:26px;
+    height:26px;
+    fill:#060101;
+    transition:.35s;
+}
+
+.instagram-link:hover{
+    color:#b88b4a;
+}
+
+.instagram-link:hover svg{
+    fill:#b88b4a;
+    transform:translateX(6px);
+}
+
+@media(max-width:768px){
+
+.instagram-section{
+    padding:80px 20px;
+}
+
+.instagram-section h2{
+    font-size:38px;
+}
+
+.instagram-link{
+    font-size:20px;
+}
+
+}
