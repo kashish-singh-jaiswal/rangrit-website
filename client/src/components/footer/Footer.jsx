@@ -86,10 +86,10 @@ function Footer() {
             <h3>Contact</h3>
 
             <a href="tel:+919039079507">+91-9039079507</a>
-            <a href="mailto:rangrit04@gmail.com">rangrit04@gmail.com</a>
+            <a href="mailto:rangrit04@gmail.com">rangrit01@gmail.com</a>
 
             <div className="footer-social">
-              <a href="https://www.instagram.com/rangrit04/" target="_blank" rel="noreferrer" aria-label="Instagram">
+              <a href="https://www.instagram.com/rangritfilms/" target="_blank" rel="noreferrer" aria-label="Instagram">
                 <FaInstagram />
               </a>
               <a href="https://www.youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube">
