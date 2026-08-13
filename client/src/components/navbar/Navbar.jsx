@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import "../../styles/navbar.css";
 
-// IMPORT YOUR LOGO HERE (Update the path based on your folder structure)
-import logoImage from "../../assets/images/hero/gemini-svg.svg";
+// Yahan apna correct logo path daalein
+import logoImage from "../../assets/images/hero/gemini-svg.svg"; 
 
 const navItems = [
   { label: "Home", to: "/" },
@@ -17,10 +17,10 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Scroll Event Listener for Glassmorphism Effect
+  // Scroll handler for transparent to solid glassmorphism effect
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
+      if (window.scrollY > 40) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -29,10 +29,6 @@ function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  // Mobile Menu Handlers
-  const toggleMenu = () => setIsOpen(!isOpen);
-  const closeMenu = () => setIsOpen(false);
 
   // Prevent scrolling when mobile menu is open
   useEffect(() => {
@@ -43,55 +39,63 @@ function Navbar() {
     }
   }, [isOpen]);
 
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
+
   return (
-    <header className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
-      <div className="navbar-container">
-        
-        {/* Logo Section */}
-        <Link to="/" className="logo" onClick={closeMenu}>
-          <img src={logoImage} alt="Rangrit Logo" className="navbar-logo-img" />
-        </Link>
+    <>
+      <header className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
+        <div className="navbar-container">
+          
+          {/* Logo */}
+          <Link to="/" className="logo" onClick={closeMenu}>
+            <img src={logoImage} alt="Rangrit Logo" className="navbar-logo-img" />
+          </Link>
 
-        {/* Mobile Hamburger Icon */}
-        <div className={`menu-icon ${isOpen ? "open" : ""}`} onClick={toggleMenu}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-        {/* Navigation Menu */}
-        <nav className={`nav-menu ${isOpen ? "nav-menu--active" : ""}`}>
-          <div className="nav-links-container">
-            {navItems.map((item, index) => (
-              <NavLink
-                key={item.label}
-                to={item.to}
-                onClick={closeMenu}
-                className={({ isActive }) =>
-                  isActive ? "nav-link nav-link--active" : "nav-link"
-                }
-                // Staggered animation delay for mobile menu items
-                style={{ '--animation-order': index }}
-              >
-                {item.label}
-              </NavLink>
-            ))}
+          {/* Mobile Hamburger Icon (Always Visible) */}
+          <div className={`menu-icon ${isOpen ? "open" : ""}`} onClick={toggleMenu}>
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
 
-          {/* WhatsApp Booking Button */}
-          <a
-            href="https://wa.me/917049569503?text=Hello%20Rangrit%20Photography,%20I%20would%20like%20to%20inquire%20about%20a%20booking!"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="book-btn"
-            onClick={closeMenu}
-          >
-            Book Now
-          </a>
-        </nav>
+          {/* Desktop & Mobile Navigation Menu */}
+          <nav className={`nav-menu ${isOpen ? "nav-menu--active" : ""}`}>
+            <div className="nav-links-container">
+              {navItems.map((item, index) => (
+                <NavLink
+                  key={item.label}
+                  to={item.to}
+                  onClick={closeMenu}
+                  className={({ isActive }) =>
+                    isActive ? "nav-link nav-link--active" : "nav-link"
+                  }
+                  style={{ '--delay': `${index * 0.1}s` }}
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+            </div>
 
-      </div>
-    </header>
+            <a
+              href="https://wa.me/917049569503?text=Hello%20Rangrit%20Photography,%20I%20would%20like%20to%20inquire%20about%20a%20booking!"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="book-btn"
+              onClick={closeMenu}
+            >
+              Book Now
+            </a>
+          </nav>
+        </div>
+      </header>
+
+      {/* Background Overlay for Mobile (Closes menu when clicked outside) */}
+      <div 
+        className={`mobile-menu-overlay ${isOpen ? "overlay-active" : ""}`} 
+        onClick={closeMenu}
+      ></div>
+    </>
   );
 }
 

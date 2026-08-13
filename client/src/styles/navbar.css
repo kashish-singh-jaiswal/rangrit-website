@@ -1,5 +1,5 @@
 /* =========================================
-   NAVBAR & HEADER STYLES
+   NAVBAR & HEADER STYLES (ENHANCED)
    ========================================= */
 
 /* --- Base Navbar --- */
@@ -8,19 +8,19 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 9999; /* Fixes disappearing issue */
   transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-  background: rgba(10, 10, 10, 0); /* Transparent at the top */
-  padding: 25px 0;
+  background: rgba(10, 10, 10, 0); 
+  padding: 20px 0;
 }
 
 /* --- Scroll State (Glassmorphism) --- */
 .navbar--scrolled {
-  background: rgba(10, 10, 10, 0.85);
-  backdrop-filter: blur(16px);
-  padding: 15px 0;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(15, 15, 15, 0.95);
+  backdrop-filter: blur(20px);
+  padding: 12px 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .navbar-container {
@@ -35,58 +35,58 @@
 /* --- Logo Styling --- */
 .logo {
   text-decoration: none;
-  z-index: 1001; /* Keeps logo above the mobile menu */
+  z-index: 10001; /* Keeps logo above everything on mobile */
   display: flex;
   align-items: center;
 }
 
 .navbar-logo-img {
-  height: 45px; /* Adjust based on your actual logo size */
+  height: 70px; /* Perfect desktop height */
   width: auto;
+  max-width: 250px;
   object-fit: contain;
-  display: block;
-  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: transform 0.3s ease;
 }
 
 .logo:hover .navbar-logo-img {
-  transform: scale(1.05); /* Slight pop on hover */
+  transform: scale(1.05);
 }
 
 /* --- Navigation Links (Desktop) --- */
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 35px;
 }
 
 .nav-links-container {
   display: flex;
-  gap: 35px;
+  gap: 30px;
 }
 
 .nav-link {
   text-decoration: none;
-  color: #e2e8f0;
+  color: #f8fafc;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   position: relative;
   transition: color 0.3s ease;
-  padding-bottom: 4px;
+  padding-bottom: 5px;
 }
 
 .nav-link:hover {
-  color: #c8a46b; /* Brand Gold */
+  color: #c8a46b;
 }
 
-/* Animated Gold Underline on Hover */
+/* Hover Underline */
 .nav-link::after {
   content: '';
   position: absolute;
   width: 0;
   height: 2px;
-  bottom: -2px;
+  bottom: 0;
   left: 0;
   background-color: #c8a46b;
   transition: width 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -113,9 +113,7 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   text-decoration: none;
-  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-  position: relative;
-  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 .book-btn:hover {
@@ -125,156 +123,148 @@
   transform: translateY(-2px);
 }
 
-/* --- Hamburger Menu Icon --- */
+/* --- Hamburger Menu Icon (Always Visible) --- */
 .menu-icon {
-  display: none; /* Hidden on Desktop */
+  display: none; 
   flex-direction: column;
   justify-content: space-between;
-  width: 32px;
-  height: 20px;
+  width: 34px;
+  height: 24px;
   cursor: pointer;
-  z-index: 1001; /* Keeps icon above the mobile menu */
+  z-index: 10001; /* Strictly above the sliding menu */
 }
 
 .menu-icon span {
   display: block;
   width: 100%;
-  height: 2px;
-  background-color: #ffffff;
-  border-radius: 2px;
-  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  height: 3px;
+  background-color: #c8a46b; /* Gold color ensures it's always visible */
+  border-radius: 4px;
+  transition: all 0.4s ease;
 }
 
-/* Hamburger turning into 'X' animation */
+/* Hamburger turning into 'X' */
 .menu-icon.open span:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
-  background-color: #c8a46b;
+  transform: translateY(10.5px) rotate(45deg);
 }
 .menu-icon.open span:nth-child(2) {
   opacity: 0;
   transform: translateX(-20px);
 }
 .menu-icon.open span:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
-  background-color: #c8a46b;
+  transform: translateY(-10.5px) rotate(-45deg);
 }
+
 
 /* =========================================
-   MOBILE RESPONSIVENESS
+   MOBILE RESPONSIVENESS (PROFESSIONAL FIX)
    ========================================= */
 
-@media (max-width: 992px) {
-  .nav-links-container {
-    gap: 20px;
-  }
-}
-
 @media (max-width: 768px) {
-  /* Show Hamburger */
-  .menu-icon {
-    display: flex;
+  /* Force solid dark background on mobile navbar */
+  .navbar {
+    padding: 15px 0;
+    background: #0a0a0a !important; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
 
-  /* Shrink logo slightly on phones */
-  .navbar-logo-img {
-    height: 35px;
+  .navbar--scrolled {
+    background: rgba(10, 10, 10, 0.98) !important;
   }
 
-  /* Full Screen Mobile Menu */
+  /* Show Hamburger & Format Logo */
+  .menu-icon { display: flex; }
+  .navbar-logo-img { height: 40px; }
+
+  /* Mobile Full-Screen Slide-in Menu */
   .nav-menu {
     position: fixed;
     top: 0;
-    right: -100%; /* Hidden off-screen to the right */
-    width: 100%;
+    right: -100%; 
+    width: 85%; 
+    max-width: 400px;
     height: 100vh;
-    background: rgba(10, 10, 10, 0.98);
-    backdrop-filter: blur(25px);
+    background: #0a0a0a !important; /* Premium dark background */
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 40px;
     transition: right 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    z-index: 10000;
   }
 
-  /* Slide in effect */
   .nav-menu--active {
     right: 0; 
+    box-shadow: -20px 0 50px rgba(0, 0, 0, 0.7);
   }
 
-  /* Stacks links vertically */
   .nav-links-container {
     flex-direction: column;
     align-items: center;
     gap: 30px;
+    width: 100%;
   }
 
-  /* Mobile Links Styling & Animation */
+  /* FIX: Forced White Color for Links */
   .nav-link {
-    font-size: 28px;
+    font-size: 22px !important;
     font-family: "Playfair Display", serif;
     letter-spacing: 2px;
+    color: #ffffff !important; /* Ye text ko visible banayega */
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateX(30px);
     transition: all 0.4s ease;
+    display: block;
+    text-align: center;
   }
 
-  /* When menu is open, fade in the links one by one */
+  /* Hover effect for mobile */
+  .nav-link:hover,
+  .nav-link--active {
+    color: #c8a46b !important;
+  }
+
   .nav-menu--active .nav-link {
     opacity: 1;
-    transform: translateY(0);
-    transition-delay: calc(0.1s * var(--animation-order));
+    transform: translateX(0);
+    transition-delay: var(--delay);
   }
 
-  /* Underline effect disabled on mobile */
-  .nav-link::after {
-    display: none; 
-  }
+  .nav-link::after { display: none; }
 
+  /* Booking Button Fix */
   .book-btn {
-    margin-top: 20px;
-    font-size: 16px;
-    padding: 16px 45px;
+    margin-top: 10px;
+    font-size: 15px !important;
+    padding: 14px 40px !important;
+    color: #c8a46b !important;
+    border: 1px solid #c8a46b !important;
+    background: transparent !important;
     opacity: 0;
     transform: translateY(20px);
-    transition: all 0.4s ease;
+    transition: all 0.5s ease;
   }
 
-  /* Fade in Book button last */
   .nav-menu--active .book-btn {
     opacity: 1;
     transform: translateY(0);
-    transition-delay: 0.6s;
-  }
-}
-
-/* --- Logo Styling (Desktop/Laptop) --- */
-.logo {
-  text-decoration: none;
-  z-index: 1001; 
-  display: flex;
-  align-items: center;
-}
-
-.navbar-logo-img {
-  height: 80px; /* Pehle 45px tha, ab bada kar diya hai */
-  width: auto;
-  max-width: 280px; /* Taki screen se bahar na jaye */
-  object-fit: contain;
-  display: block;
-  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.logo:hover .navbar-logo-img {
-  transform: scale(1.05);
-}
-
-@media (max-width: 768px) {
-  /* ... (baaki ka code waisa hi rahega) ... */
-
-  /* Mobile ke liye proper size */
-  .navbar-logo-img {
-    height: 55px; /* Pehle 35px tha, ab mobile par bhi clear dikhega */
+    transition-delay: 0.6s; 
   }
 
-  /* ... (baaki mobile ka code) ... */
+  .mobile-menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 9998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+  }
+
+  .overlay-active {
+    opacity: 1;
+    visibility: visible;
+  }
 }
