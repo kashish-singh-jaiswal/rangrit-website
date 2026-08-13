@@ -39,10 +39,14 @@ function Footer() {
             <h2 className="footer-title">A refined visual studio for timeless wedding stories.</h2>
           </div>
 
-          <Link to="/booking" className="footer-cta">
-            Start Your Story
-            <FaArrowRight />
-          </Link>
+          <a 
+           href="https://wa.me/919039079507?text=Hello%20Rangrit%20Photography,%20I%20would%20like%20to%20inquire%20about%20a%20booking!" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+          className="footer-cta">
+           Start Your Story
+         <FaArrowRight />
+          </a>   
         </div>
 
         <div className="footer-grid">

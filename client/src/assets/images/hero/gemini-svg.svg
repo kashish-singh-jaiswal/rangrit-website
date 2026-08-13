@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" width="100%" height="100%">
+  <defs>
+    <!-- Gradient for "Rang" (Yellow to Orange) -->
+    <linearGradient id="gradRang" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF8C00;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Gradient for "Rit" (Dark Purple to Pink) -->
+    <linearGradient id="gradRit" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1E1346;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF497C;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Gradient for "Professional Photographer" -->
+    <linearGradient id="gradProf" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#9B66FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF8C5A;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Optional: Embed a generic cursive font if Google Fonts fails -->
+    <style>
+      .script-font { font-family: 'Great Vibes', 'Brush Script MT', cursive; font-size: 85px; }
+      .sans-font { font-family: 'Montserrat', 'Arial', sans-serif; font-size: 22px; letter-spacing: 6px; }
+    </style>
+  </defs>
+
+  <!-- Background (Optional, remove if you want it completely transparent) -->
+  <rect width="100%" height="100%" fill="transparent"/>
+
+  <!-- Logo Text -->
+  <text x="130" y="110" class="script-font" fill="url(#gradRang)">Rang</text>
+  <text x="330" y="110" class="script-font" fill="url(#gradRit)">Rit</text>
+
+  <!-- Subtitle -->
+  <text x="300" y="160" class="sans-font" text-anchor="middle" fill="url(#gradProf)">PROFESSIONAL PHOTOGRAPHER</text>
+</svg>
