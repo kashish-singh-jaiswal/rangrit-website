@@ -1,81 +1,122 @@
 import "../../styles/footer.css";
 import hut from "../../assets/images/Hut_edited.avif";
+import { Link } from "react-router-dom";
 
 import {
- FaInstagram,
- FaYoutube,
- FaFacebookF,
- FaLinkedinIn,
- FaTwitter,
- FaPinterestP
+  FaInstagram,
+  FaYoutube,
+  FaFacebookF,
+  FaLinkedinIn,
+  FaTwitter,
+  FaPinterestP,
+  FaArrowRight,
 } from "react-icons/fa";
+
+const quickLinks = [
+  { label: "Home", to: "/" },
+  { label: "Gallery", to: "/gallery" },
+  { label: "Films", to: "/films" },
+  { label: "About", to: "/about" },
+  { label: "Services", to: "/services" },
+  { label: "Booking", to: "/booking" },
+];
+
+const services = [
+  "Wedding Photography",
+  "Pre-Wedding Shoots",
+  "Cinematic Films",
+  "Destination Coverage",
+];
 
 
 function Footer() {
   return (
     <footer className="footer">
-  <div className="container">
+      <div className="container footer-shell">
+        <div className="footer-hero">
+          <div>
+            <span className="footer-kicker">Rangrit Photography</span>
+            <h2 className="footer-title">A refined visual studio for timeless wedding stories.</h2>
+          </div>
 
-    <h2 className="footer-title">
-      Happily Ever After starts here !
-    </h2>
+          <Link to="/booking" className="footer-cta">
+            Start Your Story
+            <FaArrowRight />
+          </Link>
+        </div>
 
-      <div className="footer-contact-row">
+        <div className="footer-grid">
+          <div className="footer-brand-card">
+            <h3>About the Studio</h3>
+            <p>
+              We create elegant, cinematic photography with a modern eye for
+              detail, emotion, and premium presentation across every screen.
+            </p>
 
-  {/* Left */}
-  <div className="footer-left">
+            <div className="footer-location">
+              <img src={hut} alt="Studio location" className="footer-hut" />
+              <div>
+                <strong>Bhopal, India</strong>
+                <span>Available for worldwide assignments</span>
+              </div>
+            </div>
+          </div>
 
-    <p>
-      <span>Tel:</span>
-      <a href="tel:+919039079507"> +91-9039079507</a>
-    </p>
+          <div className="footer-links-card">
+            <h3>Quick Links</h3>
+            <nav aria-label="Footer quick links" className="footer-links-list">
+              {quickLinks.map((item) => (
+                <Link key={item.label} to={item.to}>
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
 
-    <p>
-      <span>Email:</span>
-      <a href="mailto:rangrit04@gmail.com">
-        {" "}rangrit04@gmail.com
-      </a>
-    </p>
+          <div className="footer-links-card">
+            <h3>Core Services</h3>
+            <ul className="footer-services-list">
+              {services.map((service) => (
+                <li key={service}>{service}</li>
+              ))}
+            </ul>
+          </div>
 
-  </div>
+          <div className="footer-contact-card">
+            <h3>Contact</h3>
 
-  {/* Right */}
-  <div className="footer-right">
+            <a href="tel:+919039079507">+91-9039079507</a>
+            <a href="mailto:rangrit04@gmail.com">rangrit04@gmail.com</a>
 
-    <img
-      src={hut}
-      alt="Location"
-      className="footer-hut"
-    />
+            <div className="footer-social">
+              <a href="https://www.instagram.com/rangrit04/" target="_blank" rel="noreferrer" aria-label="Instagram">
+                <FaInstagram />
+              </a>
+              <a href="https://www.youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube">
+                <FaYoutube />
+              </a>
+              <a href="https://www.facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">
+                <FaFacebookF />
+              </a>
+              <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                <FaLinkedinIn />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noreferrer" aria-label="Twitter">
+                <FaTwitter />
+              </a>
+              <a href="https://www.pinterest.com" target="_blank" rel="noreferrer" aria-label="Pinterest">
+                <FaPinterestP />
+              </a>
+            </div>
+          </div>
+        </div>
 
-    <p>Bhopal | Worldwide</p>
-
-  </div>
-
-</div>
-
-    <div className="footer-social">
-
-      <a href="#"><FaInstagram/></a>
-
-      <a href="#"><FaYoutube/></a>
-
-      <a href="#"><FaFacebookF/></a>
-
-      <a href="#"><FaLinkedinIn/></a>
-
-      <a href="#"><FaTwitter/></a>
-
-      <a href="#"><FaPinterestP/></a>
-
+        <div className="footer-bottom">
+          <span>©2026 Rangrit Photography</span>
+          <span>Wedding Photography • Films • Portraits</span>
+        </div>
       </div>
-
-    <div className="footer-bottom">
-      ©2026 RANGRIT PHOTOGRAPHY
-    </div>
-
-  </div>
-</footer>
+    </footer>
   );
 }
 

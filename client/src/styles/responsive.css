@@ -6,6 +6,11 @@ padding:80px 0;
 
 }
 
+.container-custom,
+.container{
+width:min(92%,1200px);
+}
+
 }
 
 @media(max-width:768px){
@@ -16,6 +21,11 @@ padding:70px 0;
 
 }
 
+.container-custom,
+.container{
+width:min(92%,1100px);
+}
+
 }
 
 @media(max-width:576px){
@@ -24,6 +34,11 @@ section{
 
 padding:60px 0;
 
+}
+
+.container-custom,
+.container{
+width:min(92%,1000px);
 }
 
 }

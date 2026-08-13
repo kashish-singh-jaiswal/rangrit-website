@@ -1,64 +1,48 @@
 import { Link } from "react-router-dom";
 
-import "../../styles/hero.css";
+import "../../styles/HeroGallery.css";
 
 import hero1 from "../../assets/images/hero/hero1.jpg";
 import hero2 from "../../assets/images/hero/hero2.jpg";
 import hero3 from "../../assets/images/hero/hero3.jpg";
-import img1 from "../../assets/images/gallery/gallery1.jpg";
-import img2 from "../../assets/images/gallery/gallery2.jpg";
-import img3 from "../../assets/images/gallery/gallery3.jpg";
 
 const highlights = [
   {
-    title: "Wedding Stories",
-    text: "Emotion-first frames for rituals, vows, and grand family moments.",
+    title: "Editorial storytelling",
+    text: "Clean direction, natural emotion, and an elevated finish.",
   },
   {
-    title: "Portrait Direction",
-    text: "Clean, modern posing with a premium editorial finish.",
+    title: "Cinematic tones",
+    text: "Soft contrast and a timeless color palette across every frame.",
   },
   {
-    title: "AI-Assisted Polish",
-    text: "Cinematic tone and retouch-ready previews for a sharper first impression.",
+    title: "Mobile-first gallery",
+    text: "A smooth visual experience that feels refined on every screen.",
   },
 ];
 
-const storyCards = [
-  {
-    image: img1,
-    label: "Pre-wedding",
-    title: "Soft light, clean styling, timeless chemistry.",
-  },
-  {
-    image: img2,
-    label: "Wedding Day",
-    title: "Fast-moving moments framed with calm precision.",
-  },
-  {
-    image: img3,
-    label: "Candid Frames",
-    title: "Natural expressions that feel honest and cinematic.",
-  },
+const metrics = [
+  { value: "250+", label: "events covered" },
+  { value: "Worldwide", label: "destination travel" },
+  { value: "Premium", label: "editorial finish" },
 ];
 
 function Hero() {
   return (
     <section className="hero-gallery">
       <div className="hero-gallery__glow hero-gallery__glow--left" />
-      <div className="hero-gallery__glow hero-gallery__glow--right" />
 
       <div className="container-custom hero-gallery__inner">
         <div className="hero-gallery__copy">
           <span className="hero-gallery__kicker">Rangrit Photography</span>
 
           <h1>
-            Shaadi ho ya professional shoot, har frame ko premium feel do.
+            Professional wedding photography with a clean, modern, premium feel.
           </h1>
 
           <p className="hero-gallery__lede">
-            Elegant wedding photography with cinematic lighting, candid energy,
-            and a polished visual style that looks sharp on every screen.
+            Simple, elegant, and mobile-friendly presentation for couples who
+            want timeless photos and a calm, premium experience.
           </p>
 
           <div className="hero-gallery__actions">
@@ -78,6 +62,15 @@ function Hero() {
               </article>
             ))}
           </div>
+
+          <div className="hero-gallery__metrics">
+            {metrics.map((item) => (
+              <div className="hero-gallery__metric" key={item.label}>
+                <strong>{item.value}</strong>
+                <span>{item.label}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="hero-gallery__visual">
@@ -86,39 +79,25 @@ function Hero() {
 
             <div className="hero-gallery__main-badge">
               <span>Featured Story</span>
-              <strong>Luxury Wedding Portraits</strong>
+              <strong>Elegant wedding coverage</strong>
             </div>
           </div>
 
           <div className="hero-gallery__floating-card hero-gallery__floating-card--top">
             <img src={hero2} alt="Couple in cinematic light" />
             <div>
-              <span>Cinematic tone</span>
-              <strong>Warm, modern color grading</strong>
+              <span>Style</span>
+              <strong>Modern, editorial portraits</strong>
             </div>
           </div>
 
           <div className="hero-gallery__floating-card hero-gallery__floating-card--bottom">
             <img src={hero3} alt="Professional portrait with soft lighting" />
             <div>
-              <span>AI-assisted polish</span>
-              <strong>Preview-ready concept frame</strong>
+              <span>Delivery</span>
+              <strong>Fast, polished, ready to share</strong>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div className="hero-gallery__story-strip">
-        <div className="container-custom hero-gallery__story-grid">
-          {storyCards.map((item) => (
-            <article className="hero-gallery__story-card" key={item.label}>
-              <img src={item.image} alt={item.label} />
-              <div className="hero-gallery__story-overlay">
-                <span>{item.label}</span>
-                <h3>{item.title}</h3>
-              </div>
-            </article>
-          ))}
         </div>
       </div>
     </section>
