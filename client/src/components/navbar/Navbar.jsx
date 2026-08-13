@@ -34,9 +34,13 @@ function Navbar() {
             </NavLink>
           ))}
 
-          <Link className="book-btn" to="/booking">
-            Book Now
-          </Link>
+         <a 
+          href="https://wa.me/917049569503?text=Hello%20Rangrit%20Photography,%20I%20would%20like%20to%20inquire%20about%20a%20booking!" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           className="book-btn">
+          Book Now
+        </a>
         </nav>
 
       </div>

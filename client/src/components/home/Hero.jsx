@@ -37,7 +37,7 @@ function Hero() {
           <span className="hero-gallery__kicker">Rangrit Photography</span>
 
           <h1>
-            Professional wedding photography with a clean, modern, premium feel.
+            Professional photography with a clean, modern, premium feel.
           </h1>
 
           <p className="hero-gallery__lede">

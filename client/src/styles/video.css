@@ -1,162 +1,241 @@
+/* =========================================
+   FEATURED VIDEO STYLES
+   ========================================= */
+
+/* --- Base Layout --- */
 .featured-video {
-    padding: 120px 0;
-    background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  padding: 100px 0;
+  background-color: #fafafa; /* Slight off-white background to make cards pop */
+  width: 100%;
 }
 
+.container-custom {
+  width: 92%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* --- Header Section --- */
 .video-header {
-    max-width: 750px;
-    margin: 0 auto 70px;
-    text-align: center;
+  text-align: center;
+  margin-bottom: 70px;
+  max-width: 800px;
+  margin-inline: auto;
 }
 
 .section-subtitle {
-    color: #b88b4a;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 14px;
-    margin-bottom: 15px;
+  display: inline-block;
+  color: #c8a46b;
+  letter-spacing: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 15px;
 }
 
 .video-header h2 {
-    font-family: "Playfair Display", serif;
-    font-size: 54px;
-    color: #fff;
-    margin-bottom: 25px;
-    line-height: 1.2;
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
+  color: #1a1a1a; /* Dark text for high contrast */
+  margin: 0 0 20px 0;
+  line-height: 1.2;
 }
 
 .video-text {
-    color: rgba(248,250,252,.72);
-    font-size: 17px;
-    line-height: 1.9;
+  color: #555555; /* Medium gray for readability */
+  font-size: 1.1rem;
+  line-height: 1.8;
 }
 
+/* --- Video Grid & Cards --- */
 .featured-video-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 35px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-bottom: 60px;
 }
 
 .featured-film-card {
-    background: rgba(255,255,255,.05);
-    border-radius: 22px;
-    overflow: hidden;
-    box-shadow: 0 18px 45px rgba(0,0,0,.24);
-    border: 1px solid rgba(255,255,255,.08);
-    transition: transform .35s ease;
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden; /* Keeps the video inside the rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
 }
 
 .featured-film-card:hover {
-    transform: translateY(-10px);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
-.featured-film-card video {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
+.video-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Ensures standard widescreen format */
+  background-color: #000;
 }
 
-.featured-film-card h2 {
-    padding: 22px;
-    text-align: center;
-    font-family: "Playfair Display", serif;
-    font-size: 24px;
-    color: #fff;
+.cinematic-player {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.video-btn {
-    display: flex;
-    justify-content: center;
-    margin-top: 60px;
+.film-card-content {
+  padding: 25px 20px;
+  text-align: center;
+  border-top: 1px solid #f0f0f0;
 }
 
+.film-card-content h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  color: #111111;
+  margin: 0 0 8px 0;
+}
+
+.play-prompt {
+  font-size: 13px;
+  color: #c8a46b;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+/* --- Buttons --- */
+.video-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 90px;
+}
+
+.browse-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 40px;
+  background: #111111;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.browse-btn:hover {
+  background: #c8a46b;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(200, 164, 107, 0.3);
+}
+
+.btn-arrow {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.browse-btn:hover .btn-arrow {
+  transform: translateX(6px);
+}
+
+/* --- Instagram Section --- */
 .instagram-section {
-    padding: 120px 20px;
-    background: rgba(255,255,255,.03);
-    text-align: center;
+  text-align: center;
+  padding-top: 60px;
+  border-top: 1px solid #e5e5e5;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .instagram-section h2 {
-    font-family: "Playfair Display", serif;
-    font-size: 54px;
-    color: #f3d58a;
-    margin-bottom: 45px;
+  font-family: "Playfair Display", serif;
+  font-size: 36px;
+  color: #1a1a1a;
+  margin-bottom: 25px;
 }
 
-.instagram-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 14px;
-    color: #fff;
-    text-decoration: none;
-    font-size: 24px;
-    font-weight: 500;
-    transition: .35s;
+.instagram-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 30px;
+  background: transparent;
+  color: #111111;
+  border: 2px solid #111111;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
 }
 
-.instagram-link span {
-    position: relative;
+.instagram-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: #111111;
+  transition: fill 0.3s ease;
 }
 
-.instagram-link span::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-    width: 0;
-    height: 2px;
-    background: #b88b4a;
-    transition: .35s;
+.instagram-btn:hover {
+  background: #111111;
+  color: #ffffff;
 }
 
-.instagram-link:hover span::after {
-    width: 100%;
+.instagram-btn:hover svg {
+  fill: #ffffff;
 }
 
-.instagram-link svg {
-    width: 26px;
-    height: 26px;
-    fill: #fff;
-    transition: .35s;
+/* --- Animations --- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.instagram-link:hover {
-    color: #b88b4a;
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
-.instagram-link:hover svg {
-    fill: #b88b4a;
-    transform: translateX(6px);
-}
 
-@media (max-width: 992px) {
-    .featured-video-grid {
-        grid-template-columns: 1fr;
-    }
+/* =========================================
+   MOBILE RESPONSIVENESS
+   ========================================= */
 
-    .video-header h2 {
-        font-size: 40px;
-    }
+@media (max-width: 1024px) {
+  .featured-video-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+  }
+  .video-header h2 {
+    font-size: 40px;
+  }
 }
 
 @media (max-width: 768px) {
-    .featured-video {
-        padding: 90px 0;
-    }
-
-    .instagram-section {
-        padding: 80px 20px;
-    }
-
-    .instagram-section h2 {
-        font-size: 38px;
-    }
-
-    .instagram-link {
-        font-size: 20px;
-    }
-
-    .video-header h2 {
-        font-size: 34px;
-    }
+  .featured-video {
+    padding: 60px 0;
+  }
+  .featured-video-grid {
+    grid-template-columns: 1fr; /* Stacks to 1 column on phones */
+    gap: 30px;
+  }
+  .video-header {
+    margin-bottom: 40px;
+  }
+  .video-header h2 {
+    font-size: 32px;
+  }
+  .video-text {
+    font-size: 1rem;
+  }
+  .instagram-section h2 {
+    font-size: 28px;
+  }
 }

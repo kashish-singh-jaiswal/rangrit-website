@@ -55,7 +55,7 @@ function Contact() {
             <div className="portfolio-stats__grid">
               <article className="portfolio-stat-card interactive-card">
                 <strong>Call</strong>
-                <span><a href="tel:+919039079507" className="contact-link">+91-9039079507</a></span>
+                <span><a href="tel:+91-7049569503" className="contact-link">+91-7049569503</a></span>
               </article>
               <article className="portfolio-stat-card interactive-card">
                 <strong>Email</strong>

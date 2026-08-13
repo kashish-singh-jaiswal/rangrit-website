@@ -85,8 +85,8 @@ function Footer() {
           <div className="footer-contact-card">
             <h3>Contact</h3>
 
-            <a href="tel:+919039079507">+91-9039079507</a>
-            <a href="mailto:rangrit04@gmail.com">rangrit01@gmail.com</a>
+            <a href="tel:+917049569503">+91-7049569503</a>
+            <a href="mailto:rangrit01@gmail.com">rangrit01@gmail.com</a>
 
             <div className="footer-social">
               <a href="https://www.instagram.com/rangritfilms/" target="_blank" rel="noreferrer" aria-label="Instagram">

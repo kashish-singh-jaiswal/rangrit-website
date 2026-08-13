@@ -1,153 +1,316 @@
+/* =========================================
+   FEATURED STORIES STYLES
+   ========================================= */
+
+/* --- Animations --- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.fade-up {
+  opacity: 0; /* Hidden by default until animation triggers */
+  animation: fadeUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* --- Layout --- */
 .featured-stories {
-    width: 92%;
-    margin: 100px auto;
+  width: 92%;
+  max-width: 1300px;
+  margin: 100px auto;
+  overflow: hidden; /* Prevents scrollbar jumping during animations */
 }
 
+/* --- Typography & Headers --- */
 .section-title {
-    text-align: center;
-    margin-bottom: 60px;
+  text-align: center;
+  margin-bottom: 70px;
 }
 
-.section-title span {
-    color: #c8a46b;
-    letter-spacing: 4px;
-    font-size: 14px;
-    font-weight: 600;
+.section-title .subtitle {
+  display: inline-block;
+  color: #c8a46b; /* Brand Gold */
+  letter-spacing: 5px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 15px;
 }
 
-.section-title h2 {
-    font-family: "Playfair Display", serif;
-    font-size: 52px;
-    margin: 15px 0;
-    color: #f8fafc;
+/* Premium gradient text reveal for the main heading */
+.section-title h2.title-glow {
+  font-family: "Playfair Display", serif;
+  font-size: 56px;
+  margin: 0 0 20px 0;
+  background: linear-gradient(to right, #ffffff, #e0c38c, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: shine 5s linear infinite;
 }
 
 .section-title p {
-    width: 700px;
-    max-width: 95%;
-    margin: auto;
-    color: rgba(248,250,252,.72);
-    line-height: 1.8;
+  width: 700px;
+  max-width: 95%;
+  margin: auto;
+  color: rgba(248, 250, 252, 0.75);
+  line-height: 1.9;
+  font-size: 1.1rem;
 }
 
+/* --- Grid & Cards --- */
 .stories-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
 }
 
 .story-card {
-    position: relative;
-    overflow: hidden;
-    border-radius: 18px;
-    display: block;
-    height: 420px;
-    box-shadow: 0 20px 45px rgba(0,0,0,.28);
-    transition: .4s;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  display: block;
+  height: 480px; /* Slightly taller for elegance */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Golden border glow on hover */
+.story-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(200, 164, 107, 0);
+  border-radius: 16px;
+  transition: border-color 0.5s ease;
+  pointer-events: none;
+  z-index: 2;
 }
 
 .story-card:hover {
-    transform: translateY(-10px);
+  transform: translateY(-12px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
 }
 
-.story-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: .7s;
+.story-card:hover::after {
+  border-color: rgba(200, 164, 107, 0.5);
 }
 
-.story-card:hover img {
-    transform: scale(1.1);
+/* --- Image Handling --- */
+.image-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.story-card:hover .image-wrapper img {
+  transform: scale(1.08);
+}
+
+/* --- Card Overlay & Text --- */
 .story-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,.86), rgba(0,0,0,.06));
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 30px;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px 30px;
+  z-index: 1;
+  transition: background 0.5s ease;
 }
 
-.story-overlay span {
-    color: #d8b36a;
-    font-size: 14px;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
+.story-card:hover .story-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 60%, transparent 100%);
 }
 
-.story-overlay h3 {
-    color: #fff;
-    font-size: 30px;
-    font-family: "Playfair Display", serif;
+.overlay-content {
+  transform: translateY(20px);
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
+.story-card:hover .overlay-content {
+  transform: translateY(0);
+}
+
+.location-tag {
+  color: #d8b36a;
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+  transform: translateY(10px);
+  opacity: 0.8;
+  transition: all 0.5s ease;
+}
+
+.story-card:hover .location-tag {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.overlay-content h3 {
+  color: #ffffff;
+  font-size: 34px;
+  font-family: "Playfair Display", serif;
+  margin: 0 0 10px 0;
+  line-height: 1.2;
+}
+
+.view-story {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.5s ease 0.1s; /* Slight delay for a cascading effect */
+}
+
+.story-card:hover .view-story {
+  opacity: 1;
+  transform: translateY(0);
+  color: #c8a46b;
+}
+
+.view-story .arrow {
+  font-style: normal;
+  transition: transform 0.3s ease;
+}
+
+.story-card:hover .view-story .arrow {
+  transform: translateX(5px);
+}
+
+/* --- Action Button --- */
 .featured-gallery__actions {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 70px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 70px 0;
 }
 
 .browse-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 14px;
-    padding: 18px 42px;
-    background: #111111;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 17px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    border-radius: 60px;
-    border: 1px solid transparent;
-    box-shadow: 0 15px 35px rgba(0,0,0,.18);
-    transition: all .35s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 42px;
+  background: #111111;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 60px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 
-.browse-btn span {
-    font-size: 22px;
-    transition: transform .35s ease;
+/* Fills the button with a gold gradient on hover */
+.browse-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #c8a46b, #e0c38c);
+  z-index: -1;
+  transition: opacity 0.4s ease;
+  opacity: 0;
 }
 
 .browse-btn:hover {
-    background: #c8a46b;
-    color: #fff;
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(200,164,107,.35);
+  color: #111111;
+  transform: translateY(-4px);
+  border-color: transparent;
+  box-shadow: 0 20px 40px rgba(200, 164, 107, 0.3);
 }
 
-.browse-btn:hover span {
-    transform: translateX(6px);
+.browse-btn:hover::before {
+  opacity: 1;
 }
 
-.browse-btn:active {
-    transform: translateY(-1px);
+.btn-arrow {
+  font-size: 20px;
+  transition: transform 0.4s ease;
 }
 
-@media (max-width: 992px) {
-    .stories-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.browse-btn:hover .btn-arrow {
+  transform: translateX(6px);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+  .stories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
-    .stories-grid {
-        grid-template-columns: 1fr;
-    }
+  .featured-stories {
+    margin: 60px auto;
+  }
+  .stories-grid {
+    grid-template-columns: 1fr;
+  }
+  .story-card {
+    height: 400px;
+  }
+  .section-title h2.title-glow {
+    font-size: 40px;
+  }
+}
 
-    .story-card {
-        height: 360px;
-    }
+/* Premium dark gradient text reveal for the main heading */
+.section-title h2.title-glow {
+  font-family: "Playfair Display", serif;
+  font-size: 56px;
+  margin: 0 0 20px 0;
+  /* White ki jagah dark grey (#1a1a1a) aur gold use kiya hai */
+  background: linear-gradient(to right, #1a1a1a, #c8a46b, #1a1a1a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: shine 5s linear infinite;
+}
 
-    .section-title h2 {
-        font-size: 36px;
-    }
-
-    .featured-gallery__actions {
-        margin: 48px 0 0;
-    }
+/* Paragraph text ko dark grey kiya hai */
+.section-title p {
+  width: 700px;
+  max-width: 95%;
+  margin: auto;
+  color: #555555; /* Medium dark grey for perfect visibility */
+  line-height: 1.9;
+  font-size: 1.1rem;
 }
